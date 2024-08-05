@@ -26,8 +26,8 @@ def two_sum(array: List[int], target: int) -> list[Tuple[int, int]]:
     Brute force method of iterating over the array twice.
     """
     return [
-        (array[i], array[j]) for i in range(len(array) - 1)
-        for j in range(i + 1, len(array) - 1)
+        (array[i], array[j]) for i in range(len(array))
+        for j in range(i + 1, len(array))
         if array[i] + array[j] == target
     ]
 
