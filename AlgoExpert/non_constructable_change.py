@@ -9,13 +9,14 @@ For example if you are given coins [1,2, 5] the minimum amount of change that yo
 
 def non_constructible_change(coins):
     coins.sort()
-    minimum_coin_sum = 0
-    counter_pos = 0
-    while counter_pos < len(coins) - 1:
-        minimum_coin_sum += coins[counter_pos]
-        counter_pos += 1
+    change = 1
+    for x in coins:
+        if x - change <= 0:
+            change += x
+        else:
+            break
 
-    return minimum_coin_sum + 1
+    return change
 
 
 if __name__ == "__main__":
